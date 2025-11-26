@@ -1,0 +1,160 @@
+:root{
+  --pink: #ff7fbf;
+  --dark: #222;
+  --muted: #6f6f6f;
+  --bg: #fffafc;
+  --card: #ffffff;
+  --max-width: 1100px;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(20,20,20,0.06);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Reset mínimo */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+img{max-width:100%;display:block;height:auto}
+
+/* Layout geral */
+body{
+  background:linear-gradient(180deg,var(--bg) 0%, #fff 60%);
+  color:var(--dark);
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--max-width);margin:28px auto;padding:0 20px}
+
+/* Header */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 20px;
+  max-width:var(--max-width);
+  margin:0 auto;
+  position:relative;
+  z-index:1200;
+  background:transparent;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{
+  width:48px;height:48px;border-radius:10px;
+  background:linear-gradient(135deg,var(--pink),#ffd6ea);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;
+}
+.brand-text .name{font-weight:800}
+.brand-text .tag{font-size:12px;color:var(--muted)}
+
+/* Menu toggle (mobile) */
+.menu-toggle{display:none;background:transparent;border:0;font-size:22px;padding:8px;cursor:pointer}
+
+/* Nav desktop */
+.site-nav{display:flex;gap:10px;align-items:center}
+.site-nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:8px;
+  font-weight:600;
+}
+.site-nav a:focus{outline:none;box-shadow:0 0 0 3px rgba(255,127,191,0.12)}
+
+/* Hero / destaque */
+.show-hero{
+  width:100%;
+  height:min(72vh,760px);
+  position:relative;
+  overflow:hidden;
+  background:#fbeff6;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+}
+.show-photo{width:100%;height:100%;object-fit:cover;display:block}
+.show-overlay{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:28px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.04) 45%, transparent 100%);
+}
+.show-card{
+  max-width:920px;width:100%;color:#fff;padding:20px;border-radius:14px;text-align:center;
+  backdrop-filter: blur(6px);
+}
+.badge, .show-badge, .show-badge .badge{display:inline-block;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:999px;font-weight:800;margin-bottom:10px}
+.show-title{font-size:clamp(22px,4.5vw,40px);margin:8px 0 6px;font-weight:900}
+.show-sub{color:rgba(255,255,255,0.95);margin:0 0 12px;font-weight:600}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:800;border:0;cursor:pointer;text-decoration:none}
+.btn-primary{background:#fff;color:var(--pink);box-shadow:0 10px 28px rgba(255,127,191,0.10)}
+.btn-outline{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--dark)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18);padding:10px 14px;border-radius:12px}
+
+/* Main / cards */
+.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card-sm{padding:12px}
+
+/* Show section layout */
+.show-section{display:grid;grid-template-columns:1fr 240px;gap:18px;align-items:start}
+.show-poster{display:flex;align-items:center;justify-content:center;padding:10px}
+
+/* Teachers */
+.teacher-list{display:flex;flex-wrap:wrap;gap:12px}
+.teacher{display:flex;gap:12px;align-items:center}
+.avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#ffd6ea,#ffc0e8)}
+
+/* Schedule table */
+.schedule{width:100%;border-collapse:collapse}
+.schedule th,.schedule td{padding:10px;border-bottom:1px solid #f2e8f0;text-align:left}
+
+/* Instagram gallery */
+.ig-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.ig-gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;display:block;transition:transform .25s ease}
+.ig-gallery a:hover img{transform:scale(1.04)}
+
+/* Contact form */
+.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+form label{display:block;margin-top:10px;font-weight:700}
+form input,form textarea,form select{width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px}
+.form-row{display:flex;gap:8px;align-items:center;margin-top:12px}
+
+/* Footer */
+.site-footer, footer{padding:18px;text-align:center;color:var(--muted);font-size:14px}
+
+/* Fixed toggle button */
+.toggle-btn{position:fixed;right:16px;bottom:16px;z-index:1300;background:var(--pink);color:#fff;border:none;padding:12px 14px;border-radius:999px;font-weight:800;box-shadow:0 12px 30px rgba(255,127,191,0.18);cursor:pointer}
+
+/* Minimal mode: keep hero visible, hide rest (controlled by JS) */
+body.minimal .site-nav,
+body.minimal main,
+body.minimal .site-footer,
+body.minimal footer{display:none}
+
+/* Mobile responsive */
+@media (max-width:880px){
+  .menu-toggle{display:block}
+  .site-nav{
+    position:fixed;right:14px;top:64px;background:#fff;box-shadow:0 8px 30px rgba(20,20,20,0.08);
+    border-radius:12px;padding:10px;flex-direction:column;display:none;z-index:1400;min-width:200px;
+  }
+  body.nav-open .site-nav{display:flex}
+  .site-nav a{color:var(--dark);padding:12px 14px}
+  .show-hero{height:min(60vh,520px)}
+  .show-card{padding:14px}
+  .contact-grid{grid-template-columns:1fr}
+  .show-section{grid-template-columns:1fr}
+  .ig-gallery img{height:100px}
+  .container{padding:0 16px}
+}
+
+/* Small phones */
+@media (max-width:420px){
+  .show-title{font-size:20px}
+  .actions{flex-direction:column}
+  .show-sub{font-size:13px}
+  .brand-text .tag{display:none}
+}
+
+/* Accessibility focus */
+:focus{outline:none;box-shadow:0 0 0 3px rgba(255,127,191,0.12)}
